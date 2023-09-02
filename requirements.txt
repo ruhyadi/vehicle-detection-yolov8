@@ -1,0 +1,23 @@
+# usage: pip install -r requirements.txt
+
+# base
+hydra-core==1.3.2 # hydra configuration
+rootutils==1.0.7 # path management
+colorlog==6.7.0 # logging with colors
+tqdm==4.66.0 # progress bar
+python-dotenv==1.0.0 # .env file support
+
+# api
+fastapi==0.101.1 # API framework
+uvicorn==0.23.2 # ASGI server
+pydantic==2.2.0 # data validation
+
+# DL framework
+onnxruntime==1.14.1 # ONNX runtime
+ultralytics==8.0.* # ultralytics yolov8
+# torch==2.0.0 # PyTorch
+# torchvision==0.15.1 # PyTorch vision
+
+# Image processing
+Pillow==10.0.0 # python image library
+opencv-python-headless==4.8.* # opencv headless
