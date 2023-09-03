@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  vehicle-yolov8:
+    container_name: vehicle-yolov8
+    image: ruhyadi/vehicle-detection:latest
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./:/didi
+      - /etc/localtime:/etc/localtime:ro
+    command: bash
+    user: admin
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

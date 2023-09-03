@@ -1,0 +1,12 @@
+# KITTI YOLOv8 training config
+
+# Dataset & configs path
+path: ../data/kitti
+train: yolo_train.txt
+val: yolo_val.txt
+
+# Classes
+names:
+  0: car
+  1: pedestrian
+  2: cyclist

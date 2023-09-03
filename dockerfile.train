@@ -14,11 +14,15 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
-# install python dependencies
+# Install python dependencies
 COPY ./requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/requirements.txt
 RUN rm /tmp/requirements.txt
+
+# Reinstall opencv headless
+RUN pip uninstall -y opencv-python opencv-python-headless && \
+    pip install opencv-python-headless
 
 # set working directory
 WORKDIR /didi
