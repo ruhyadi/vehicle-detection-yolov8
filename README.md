@@ -3,6 +3,8 @@
 ## 🏁 Introduction
 YOLOv8 is a real-time object detection model developed by [Ultralytics](https://github.com/ultralytics/ultralytics). This repository demonstrate how to train YOLOv8 on [KITTI](https://www.kaggle.com/datasets/didiruh/capstone-kitti-training) dataset and use it to detect vehicles in images and videos. Then we will deploy the trained model as an API server using [FastAPI](https://fastapi.tiangolo.com/).
 
+![Vehicle Detection](assets/000049_processed.jpeg)
+
 ## 👀 Quickstart
 Quickstart will guide you to run vehicle detection API server using Docker. If you want to train YOLOv8 on KITTI dataset, please refer to the [Installation](#installation) section.
 

@@ -130,6 +130,7 @@ class SnapshotApi:
                 )
 
             # return image
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
             _, img_bytes = cv2.imencode(".jpg", img)
 
             return Response(content=img_bytes.tobytes(), media_type="image/jpeg")
@@ -138,7 +139,6 @@ class SnapshotApi:
         """Convert image bytes to numpy array."""
         img = Image.open(BytesIO(img_bytes))
         img = np.array(img)
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
         # if PNG convert to RGB
         if img.shape[-1] == 4:
