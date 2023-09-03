@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  vehicle-yolov8-api:
+    container_name: vehicle-yolov8-api
+    image: ruhyadi/vehicle-detection-api:latest
+    restart: unless-stopped
+    tty: true
+    ports:
+      - 7000:7000
+    expose:
+      - 7000
+    volumes:
+      - ./:/didi
+      - /etc/localtime:/etc/localtime:ro
+    command: |
+      python src/main.py
+          --engine_path tmp/vehicle_kitti_v0_last.onnx
+          --categories car pedestrian cyclist
+          --provider cpu
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

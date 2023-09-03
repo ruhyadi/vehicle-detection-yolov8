@@ -1,0 +1,14 @@
+# usage: docker build -f dockerfile.api -t ruhyadi/vehicle-detection-api:latest .
+FROM python:3.10.13-slim
+
+# Install python dependencies
+COPY ./requirements-api.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r /tmp/requirements.txt
+RUN rm /tmp/requirements.txt
+
+# set working directory
+WORKDIR /didi
+
+# entrypoint
+CMD ["bash"]

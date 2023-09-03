@@ -13,12 +13,12 @@ class SnapshotRequestSchema(BaseModel):
     """Snapshot request schema."""
 
     image: UploadFile = File(..., description="Image file to process")
-    conf: float = Field(0.25, examples=0.25)
+    conf: float = Field(0.25, example=0.25)
 
 
 class SnapshotResponseSchema(BaseModel):
     """Snapshot response schema."""
 
-    category: str = Field(..., examples="car")
-    box: List[int] = Field(..., examples=[0, 0, 100, 100])
-    score: float = Field(..., examples=0.69)
+    category: str = Field(..., example="car")
+    box: List[int] = Field(..., example=[0, 0, 100, 100])
+    score: float = Field(..., example=0.69)
