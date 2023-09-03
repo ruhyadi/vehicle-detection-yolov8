@@ -142,3 +142,10 @@ python src/train.py \
 ```
 You can also use the `--weights` flag to specify a custom weight file.
 
+## Export to ONNX
+ONNX (Open Neural Network Exchange) is an open format for representing deep learning models. To export the trained model to ONNX, run the following command:
+```bash
+python tools/torch2onnx.py \
+    --weights_path tmp/vehicle_kitti_v0_last.pt
+```
+You should have exported ONNX model in the `tmp` folder.
